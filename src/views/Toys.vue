@@ -2,8 +2,8 @@
 <div>
     <app-bar></app-bar>
     <v-container>
-        <v-card width=1000px class="mx-auto mt-5">
-            <v-btn @click="displayToyForm">New Toy</v-btn>
+        <v-btn @click="displayToyForm">New Toy</v-btn>
+        <v-card class="mx-auto mt-5">
             <toys-list></toys-list>
             <toy-form></toy-form>
         </v-card>
