@@ -13,23 +13,28 @@
           Privacy Policy
         </v-card-title>
 
-        <v-card-text>
+        <v-container>
             <v-text-field label="Codigo" type="text" :value="currentToy.data.code" @input="updateCode"/>
             <v-text-field label="Nombre" type="text" :value="currentToy.data.name" @input="updateName"/>
             <v-text-field label="Precio" prefix="$" :value="currentToy.data.price" @input="updatePrice"/>
             <v-text-field label="Stock" suffix="unidades" :value="currentToy.data.stock" @input="updateStock"/>
-        </v-card-text>
+        </v-container>
 
         <v-divider></v-divider>
 
         <v-card-actions>
+          <v-btn
+            color="primary"
+            text
+            @click="cancelForm">
+            cancelar
+          </v-btn>
           <v-spacer></v-spacer>
           <v-btn
             color="primary"
             text
-            @click="submitForm"
-          >
-            I accept
+            @click="submitForm">
+            Agregar
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -45,6 +50,9 @@ export default {
 
         submitForm(){
             this.postToy()
+            this.hideToyForm()
+        },
+        cancelForm(){
             this.hideToyForm()
         }
     },

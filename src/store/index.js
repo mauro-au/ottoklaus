@@ -48,6 +48,12 @@ export default new Vuex.Store({
       .then(() =>{
         dispatch('setToys')
       })
+    },
+    deleteToy({ dispatch }, id){
+      axios.delete(`https://us-central1-ottoklaus-a2f64.cloudfunctions.net/toys/toy/${id}`)
+      .then(()=>{
+        dispatch('setToys')
+      })
     }
   },
   modules: {
