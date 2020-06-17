@@ -21,7 +21,7 @@
             <v-btn color="primary" @click="removeToy(toy.id)">
               <v-icon>mdi-delete</v-icon>Delete</v-btn>
 
-            <v-btn color="primary" @click="editToy(id)">
+            <v-btn color="primary" @click="editToy(toy.id)">
               <v-icon>mdi-pencil</v-icon>Edit</v-btn>
           </td>
         </tr>
@@ -35,12 +35,18 @@
 import { mapState, mapActions } from 'vuex'
 export default {
     methods: {
-        ...mapActions(['setToys', 'deleteToy']),
+        ...mapActions(['setToys', 'deleteToy', 'setCurrentToy', 'displayToyForm']),
         removeToy(id){
           let confirmation = confirm('Estas seguro de boorar  el producto?')
           if (confirmation) {
-            this.deleteToy(id)            
+            this.deleteToy(id)
           }
+        },
+        editToy(id){
+          //establecer jugete actual, en basea al id entregado
+          this.setCurrentToy(id)
+          //desplegar el formulario con el juguete actual
+          this.displayToyForm()
         }
     },
     computed: {

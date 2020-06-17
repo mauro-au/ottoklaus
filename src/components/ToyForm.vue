@@ -33,8 +33,7 @@
           <v-btn
             color="primary"
             text
-            @click="submitForm">
-            Agregar
+            @click="submitForm">{{ !!currentToy.id ? 'Actualizar' : 'Crear'}}
           </v-btn>
         </v-card-actions>
       </v-card>
@@ -46,15 +45,16 @@
 import { mapState, mapActions } from 'vuex'
 export default {
     methods: {
-        ...mapActions(['hideToyForm', 'updateCode', 'updateName', 'updatePrice', 'updateStock','postToy']),
+        ...mapActions(['hideToyForm', 'updateCode', 'updateName', 'updatePrice', 'updateStock','postToy', 'updateToy', 'cancelForm']),
 
         submitForm(){
+          if (this.currentToy.id) {
+            this.updateToy(this.currentToy.id)
+          }else{
             this.postToy()
+          }
             this.hideToyForm()
         },
-        cancelForm(){
-            this.hideToyForm()
-        }
     },
     computed: {
         ...mapState(['showForm', 'currentToy'])
