@@ -4,11 +4,11 @@
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-left">Code</th>
-          <th class="text-left">Nombre</th>
-          <th class="text-left">Precio</th>
-          <th class="text-left">Stock</th>
-          <th class="text-left"></th>
+          <th class="code">Code</th>
+          <th class="nombre">Nombre</th>
+          <th class="precio">Precio</th>
+          <th class="stock">Stock</th>
+          <th class="buttonss"></th>
         </tr>
       </thead>
       <tbody>
@@ -17,12 +17,14 @@
           <td>{{ toy.data.name }}</td>
           <td>{{ toy.data.price }}</td>
           <td>{{ toy.data.stock }}</td>
-          <td>
-            <v-btn color="primary" @click="removeToy(toy.id)">
-              <v-icon>mdi-delete</v-icon>Delete</v-btn>
+          <td class="button">
+            <v-btn color="error rounded-pill" class="btn mx-2" @click="removeToy(toy.id)">
+              <v-icon>mdi-delete</v-icon>
+            </v-btn>
 
-            <v-btn color="primary" @click="editToy(toy.id)">
-              <v-icon>mdi-pencil</v-icon>Edit</v-btn>
+            <v-btn color="success rounded-pill" class="btn mx-2" @click="editToy(toy.id)">
+              <v-icon>mdi-pencil</v-icon>
+            </v-btn>
           </td>
         </tr>
       </tbody>
@@ -57,6 +59,34 @@ export default {
     },
 };
 </script>
-
 <style>
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.buttonss{
+  width:154px;
+}
+.nombre{
+  width: 30%;
+}
+.code, .precio{
+  width: 115px;
+}
+.stock{
+  width: 75px;
+}
+.btn{
+  height: 45px !important;
+  min-width: 45px !important;
+  padding: 0 !important;
+}
+td{
+  height: 65px !important;
+}
+th{
+  font-size: 1rem !important;
+  background: rgb(231, 231, 231);
+}
 </style>

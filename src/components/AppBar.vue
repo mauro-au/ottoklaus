@@ -1,27 +1,20 @@
 
 <template>
-         <v-app-bar
-      color="primary"
+    <v-app-bar
+      color="blue-grey darken-3"
       dark
     >
       <div class="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
+          alt="Otto Klaus"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="/img/toy.svg"
           transition="scale-transition"
           width="40"
         />
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <h2 class="title__logo">OTTO KLAUS</h2>
       </div>
 
       <v-spacer></v-spacer>
@@ -45,5 +38,13 @@ export default {
   },
 };
 </script>
-
- 
+<style scoped>
+.title__logo{
+  margin-left: 10px !important;
+}
+@media (max-width: 512px) {
+  .title__logo{
+    font-size: 1rem !important;
+  }
+}
+</style>

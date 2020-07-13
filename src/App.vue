@@ -1,12 +1,12 @@
 <template>
   <v-app>
-      <router-view></router-view>
+    <transition name='fade'>
+      <router-view/>
+    </transition>
   </v-app>
 </template>
 
 <script>
-// import Toys from './views/Toys';
-
 export default {
   name: 'App',
   data: () => ({
@@ -14,3 +14,14 @@ export default {
   }),
 };
 </script>
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: .3s;
+}
+.fade-enter-active {
+  transition-delay: .3s;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+</style>

@@ -1,12 +1,27 @@
 <template>
-  <v-app>
+  <v-app class="login">
+    <v-snackbar elevation="0" top color="error darken-1" v-model="alert" timeout="3000">
+      <v-icon dark right class="mr-5">mdi-alert</v-icon>Los datos no son correctos
+    </v-snackbar>
+
     <v-card width="400" class="mx-auto my-auto">
       <v-card-title class="pb-0">
-        <h1>logIn</h1>
+        <div class="d-flex align-center mx-auto my-5">
+          <v-img
+            alt="Vuetify Logo"
+            class="shrink mr-2"
+            contain
+            src="/toy.svg"
+            transition="scale-transition"
+            width="40"
+          />
+          <h2>OTTO KLAUS</h2>
+        </div>
       </v-card-title>
+
       <v-card-text>
         <v-form>
-          <v-text-field label="usuario" prepend-icon="mdi-account-circle" 
+          <v-text-field label="usuario" prepend-icon="mdi-account-circle"
           v-model="user"
           />
           <v-text-field
@@ -21,7 +36,6 @@
       </v-card-text>
       <v-divider />
       <v-card-actions>
-        <v-btn color="success">Register</v-btn>
         <v-spacer></v-spacer>
         <v-btn color="info" @click="login">Login</v-btn>
       </v-card-actions>
@@ -36,6 +50,7 @@ export default {
     user: '',
     password: '',
     showPassword: false,
+    alert:false
   }),
   methods: {
     login(){
@@ -45,11 +60,16 @@ export default {
         alert(`Bienvenido ${this.user}`)
       })
       .catch(()=>{
-        alert('no no nooo')
+        this.alert = true
       })
-    }    
+    }
   },
 };
 </script>
 
-<style></style>
+<style>
+.login{
+  background: url('/img/login.jpg') no-repeat center !important;
+  background-size:cover  !important;
+}
+</style>

@@ -11,7 +11,7 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Toys',
     component: Toys,
-    alias: '/toys',
+      alias: ['/toys', '/home'],
     meta:{
       login: true
     }
