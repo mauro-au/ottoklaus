@@ -28,6 +28,8 @@ Desarrollo de aplicación para agregar, quitar o editar productos utilizando la 
 
 ## Vista Proyecto :tada:
 
+[Ver proyecto](https://ottoklaus-a2f64.web.app/) 💻
+
 ![otto_klaus](https://user-images.githubusercontent.com/47857535/87260399-b5e81d00-c47f-11ea-8277-973cbe8f3ad9.png)
 
 ## Requisitos ✔️
@@ -38,29 +40,32 @@ Antes de arrancar este proyecto debes tener instalado lo siguiente
 
 > [https://nodejs.org/](https://nodejs.org/)
 
-**Vue.js** 
-
-> [https://vuejs.org/](https://vuejs.org/)
-
-```
-$ npm install -g vue
-```
-
 **Vue CLI**
 
 > [https://cli.vuejs.org/](https://cli.vuejs.org/)
 
 ```
-npm install -g @vue/cli @vue/cli-service-global
+$ npm install -g @vue/cli
+```
+
+#o
+
+```
+$ yarn global add @vue/cli
 ```
 
 **Firebase**
 
 > https://firebase.google.com/
->
 
 ```
-npm install -g firebase-tools
+$ npm install -g firebase-tools
+```
+
+#o
+
+```
+$ yarn add -g firebase firebase-tools
 ```
 
 
@@ -81,16 +86,32 @@ Una vez clonado el proyecto solo queda instalar las dependencias, ubicándose en
 $ npm install
 ```
 
+#o
+
+```
+$ yarn install
+```
+
+
+
 Terminado el proceso se podrá ejecutar el proyecto localmente con el siguiente comando
 
 ```
-npm run serve
+$npm run serve
 ```
+
+#o
+
+```
+$ yarn start
+```
+
+
 
 Para inicializar Firebase en su proyecto
 
 ```
-firebase init
+$ firebase init
 ```
 
 
@@ -103,10 +124,18 @@ Con el siguiente comando se compila y minifica para producción
 $ npm run build
 ```
 
+#o
+
+```
+$ yarn build
+```
+
+
+
 Para implementar el alojamiento en Firebase y ver el proyecto en producción
 
 ```
-firebase deploy --only hosting
+$ firebase deploy --only hosting
 ```
 
 
